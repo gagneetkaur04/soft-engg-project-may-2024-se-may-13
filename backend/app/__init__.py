@@ -9,9 +9,7 @@ api = Api(doc='/docs') # serves the docs at "localhost:5000/docs"
 
 def create_app():
     app = Flask(__name__)
-
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-    app.config['JWT_SECRET_KEY'] = 'supersecretkey'
+    app.config.from_object('config.Config')
 
     db.init_app(app)
     api.init_app(app)
