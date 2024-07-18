@@ -1,4 +1,4 @@
-from app.models import Assignment, AssignmentQuestion, Grade
+from app.models import Assignment, AssignmentQuestion, SubmissionAnswer, Grade
 from app import db
 
 class AssignmentService:
@@ -38,18 +38,44 @@ class AssignmentService:
 
     @staticmethod
     def submit_assignment(student_id, assignment_id, answers):
-        questions = AssignmentQuestion.query.filter_by(assignment_id=assignment_id).all()
-        correct_count = 0
-        for question in questions:
-            if str(question.question_id) in answers and answers[str(question.question_id)] == question.correct_option:
-                correct_count += 1
-        
-        score = (correct_count / len(questions)) * 100
-        grade = Grade(student_id=student_id, assignment_id=assignment_id, score=round(score, 2))
+        assignment = Assignment.query.get(assignment_id)
+        total_questions = len(assignment.questions)
+        correct_answers = 0
+
+        # remember answers is a dict of question_id, answer pairs
+        # like {"1": "a", "2": "b", ...}
+        for question_id, chosen_answer in answers.items():
+            question = AssignmentQuestion.query.get(question_id)
+            is_correct = (chosen_answer == question.correct_option)
+            if is_correct:
+                correct_answers += 1
+
+            submission = SubmissionAnswer(
+                student_id=student_id,
+                question_id=question_id,
+                chosen_answer=chosen_answer,
+                is_correct=is_correct
+            )
+            db.session.add(submission)
+
+        score = (correct_answers / total_questions) * 100
+        grade = Grade(student_id=student_id, assignment_id=assignment_id, score=score)
         db.session.add(grade)
         db.session.commit()
+
         return grade
     
+    @staticmethod
+    def get_student_submission(student_id, assignment_id):
+        assignment = Assignment.query.get(assignment_id)
+
+        submission = SubmissionAnswer.query.join(AssignmentQuestion).filter(
+            SubmissionAnswer.student_id == student_id,
+            AssignmentQuestion.assignment_id == assignment_id
+        ).all()
+
+        return submission
+
     @staticmethod
     def get_all_grades_by_course(student_id, course_id):
         return db.session.query(Grade).join(Assignment).filter(Grade.student_id==student_id, Assignment.course_id==course_id).all()

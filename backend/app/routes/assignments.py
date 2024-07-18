@@ -38,6 +38,12 @@ submission_model = api.model('Submission', {
     # answers is a dictionary of question_id and the selected option
 })
 
+submission_answer_model = api.model('SubmissionAnswer', {
+    'question_id': fields.Integer(readonly=True),
+    'chosen_answer': fields.String(readonly=True),
+    'is_correct': fields.Boolean(readonly=True)
+})
+
 grade_model = api.model('Grade', {
     'grade_id': fields.Integer(readonly=True),
     'student_id': fields.Integer(required=True),
@@ -102,7 +108,24 @@ class SubmitAssignment(Resource):
         if grade:
             api.abort(400, "Assignment already submitted")
 
-        return AssignmentService.submit_assignment(student_id, assignment_id, answers)
+        return AssignmentService.submit_assignment(student_id, assignment_id, answers), 201
+    
+@api.route('/submission/<int:assignment_id>')
+class StudentSubmission(Resource):
+    @api.marshal_list_with(submission_answer_model)
+    @jwt_required()
+    @api.doc(security="jsonWebToken")
+    def get(self, assignment_id):
+        """Fetch a student's submitted answers for a specific assignment"""
+        student_id = get_jwt_identity()
+
+        if not AssignmentService.assignment_exists(assignment_id):
+            api.abort(404, "Assignment not found")
+
+        submission = AssignmentService.get_student_submission(student_id, assignment_id)
+        if submission:
+            return submission
+        api.abort(404, "No submission found for this assignment")
 
 @api.route('/course/<string:course_id>/grades')
 class CourseGrades(Resource):
