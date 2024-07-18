@@ -17,11 +17,12 @@ def create_app():
     api.init_app(app)
     jwt.init_app(app)
 
-    from .routes import courses_ns, auth_ns, notes_ns
+    from .routes import courses_ns, auth_ns, notes_ns, assignments_ns
     
     # register namespaces
     api.add_namespace(courses_ns)
     api.add_namespace(auth_ns)
     api.add_namespace(notes_ns)
+    api.add_namespace(assignments_ns)
 
     return app
