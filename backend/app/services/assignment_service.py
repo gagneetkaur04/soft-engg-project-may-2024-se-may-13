@@ -8,25 +8,7 @@ class AssignmentService:
     
     @staticmethod
     def get_assignments_by_course_and_week(course_id, week_number):
-        assignments = Assignment.query.filter_by(course_id=course_id, week_number=week_number).all()
-        result = []
-        for assignment in assignments:
-            questions = AssignmentQuestion.query.filter_by(assignment_id=assignment.assignment_id).all()
-            assignment_data = {
-                'assignment_id': assignment.assignment_id,
-                'questions': [{
-                    'question_id': q.question_id,
-                    'question_text': q.question_text,
-                    'options': {
-                        'a': q.option_a,
-                        'b': q.option_b,
-                        'c': q.option_c,
-                        'd': q.option_d
-                    }
-                } for q in questions]
-            }
-            result.append(assignment_data)
-        return result
+        return Assignment.query.filter_by(course_id=course_id, week_number=week_number).all()
     
     @staticmethod
     def get_all_assignments_by_course(course_id):

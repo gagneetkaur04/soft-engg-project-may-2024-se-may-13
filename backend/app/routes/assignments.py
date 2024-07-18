@@ -15,7 +15,10 @@ api = Namespace('assignments', description='Assignment operations', authorizatio
 question_model = api.model('Question', {
     'question_id': fields.Integer(readonly=True),
     'question_text': fields.String(required=True),
-    'options': fields.Raw(required=True)
+    'option_a': fields.String(required=True),
+    'option_b': fields.String(required=True),
+    'option_c': fields.String(required=True),
+    'option_d': fields.String(required=True)
 })
 
 assignment_model = api.model('Assignment', {
