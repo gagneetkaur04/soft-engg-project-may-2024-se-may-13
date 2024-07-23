@@ -12,10 +12,17 @@ authorizations = {
 
 api = Namespace('courses', description='Course operations', authorizations=authorizations)
 
+instructor_model = api.model('Instructor', {
+    'instructor_id': fields.Integer,
+    'first_name': fields.String,
+    'last_name': fields.String,
+    'email': fields.String
+})
+
 course_model = api.model('Course', {
     'course_id': fields.String,
     'title': fields.String,
-    # 'instructor_id': fields.Integer
+    'instructor': fields.Nested(instructor_model)
 })
 
 course_content_model = api.model('CourseContent', {
