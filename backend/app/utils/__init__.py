@@ -1,1 +1,1 @@
-from .data_entry import insert_course_contents_from_json
+from .data_entry import insert_course_contents_from_json, insert_default_instructors, insert_default_courses

@@ -1,5 +1,5 @@
 import json
-from app.models import CourseContent
+from app.models import CourseContent, Instructor, Course
 
 from app import db
 
@@ -27,4 +27,23 @@ def insert_course_contents_from_json(json_file_path):
 
             db.session.add(course_content)
     
+    db.session.commit()
+
+def insert_default_instructors():
+    prof_sudarshan = Instructor(first_name='Sudarshan', last_name='Iyengar', email='sudarshan@iitrpr.ac.in')
+    prof_usha = Instructor(first_name='Usha', last_name='Mohan', email='ushamohan@iitm.ac.in')
+    db.session.add_all([prof_sudarshan, prof_usha])
+    db.session.commit()
+
+def get_instructor_by_email(email):
+    return Instructor.query.filter_by(email=email).first()
+
+def insert_default_courses():
+    prof_sudarshan = get_instructor_by_email('sudarshan@iitrpr.ac.in')
+    prof_usha = get_instructor_by_email('ushamohan@iitm.ac.in')
+
+    intro_python = Course(course_id='CS1002', title='Programming in Python', instructor_id=prof_sudarshan.instructor_id)
+    stats1 = Course(course_id='MA1002', title='Statistics for Data Science I', instructor_id=prof_usha.instructor_id)
+
+    db.session.add_all([intro_python, stats1])
     db.session.commit()
