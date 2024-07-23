@@ -1,4 +1,4 @@
-from app.models import Student
+from app.models import Student, Course
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -16,8 +16,11 @@ class UserService:
         
         db.session.add(student)
 
-        # TODO: add checks for duplicate emails and other validations, return appropriate error messages in those cases
-        # TODO: enroll these students in the courses by default
+        # enroll the newly registered student in default courses
+        python = Course.query.get('CS1002')
+        stats1 = Course.query.get('MA1002')
+        default_courses = [python, stats1]
+        student.courses.extend(default_courses)
 
         db.session.commit()
         return student
