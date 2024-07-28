@@ -32,7 +32,9 @@ def insert_course_contents_from_json(json_file_path):
 def insert_default_instructors():
     prof_sudarshan = Instructor(first_name='Sudarshan', last_name='Iyengar', email='sudarshan@iitrpr.ac.in')
     prof_usha = Instructor(first_name='Usha', last_name='Mohan', email='ushamohan@iitm.ac.in')
-    db.session.add_all([prof_sudarshan, prof_usha])
+    prof_arun = Instructor(first_name='Arun', last_name='Rajkumar', email='arunr@cse.iitm.ac.in')
+
+    db.session.add_all([prof_sudarshan, prof_usha, prof_arun])
     db.session.commit()
 
 def get_instructor_by_email(email):
@@ -41,9 +43,11 @@ def get_instructor_by_email(email):
 def insert_default_courses():
     prof_sudarshan = get_instructor_by_email('sudarshan@iitrpr.ac.in')
     prof_usha = get_instructor_by_email('ushamohan@iitm.ac.in')
+    prof_arun = get_instructor_by_email('arunr@cse.iitm.ac.in')
 
     intro_python = Course(course_id='CS1002', title='Programming in Python', instructor_id=prof_sudarshan.instructor_id)
     stats1 = Course(course_id='MA1002', title='Statistics for Data Science I', instructor_id=prof_usha.instructor_id)
+    mlt = Course(course_id='CS2007', title='Machine Learning Techniques', instructor_id=prof_arun.instructor_id)
 
-    db.session.add_all([intro_python, stats1])
+    db.session.add_all([intro_python, stats1, mlt])
     db.session.commit()

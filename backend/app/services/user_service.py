@@ -19,7 +19,8 @@ class UserService:
         # enroll the newly registered student in default courses
         python = Course.query.get('CS1002')
         stats1 = Course.query.get('MA1002')
-        default_courses = [python, stats1]
+        mlt = Course.query.get('CS2007')
+        default_courses = [python, stats1, mlt]
         student.courses.extend(default_courses)
 
         db.session.commit()
