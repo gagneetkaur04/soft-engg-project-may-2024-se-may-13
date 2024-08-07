@@ -31,7 +31,7 @@ class Register(Resource):
         """Register a new user"""
         user = UserService.create_user(**api.payload)
         if not user:
-            return {'message': 'User with this email already exists'}, 400
+            api.abort(400, 'User with this email already exists')
         else:
             return user, 201
 
@@ -44,4 +44,4 @@ class Login(Resource):
         if user and UserService.check_password(user, api.payload['password']):
             access_token = create_access_token(identity=user.student_id)
             return {'access_token': access_token}, 200
-        return {'message': 'Invalid credentials'}, 401
+        api.abort(401, 'Invalid credentials')
