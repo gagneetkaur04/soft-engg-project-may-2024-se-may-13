@@ -7,9 +7,9 @@ db = SQLAlchemy()
 jwt = JWTManager()
 api = Api(doc='/docs') # serves the docs at "localhost:5000/docs"
 
-def create_app():
+def create_app(config_name='development'):
     app = Flask(__name__)
-    app.config.from_object('config.Config')
+    app.config.from_object(f'config.{config_name.capitalize()}Config')
 
     db.init_app(app)
     api.init_app(app)
