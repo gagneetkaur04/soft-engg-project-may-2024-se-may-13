@@ -23,7 +23,7 @@ class SummaryService:
     @staticmethod
     def fetch_lecture_transcript(content_id):
         lecture = CourseContent.query.get(content_id)
-        if lecture.transcript_url:
+        if lecture and lecture.transcript_url:
             # make a get request to fetch the transcript from the url
             response = requests.get(lecture.transcript_url)
             if response.status_code == 200:

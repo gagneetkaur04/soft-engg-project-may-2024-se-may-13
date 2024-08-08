@@ -1,5 +1,6 @@
 import pytest
 from app import create_app, db
+from app.models import CourseContent
 from app.utils import insert_default_courses, insert_default_instructors, insert_default_programming_assignments, insert_default_assignments_stats
 from app.services.user_service import UserService
 
@@ -30,6 +31,17 @@ def init_database(test_client):
 
     # Insert default programming assignments
     insert_default_programming_assignments()
+
+    # Insert some random lecture content for testing
+    content = CourseContent(
+        course_id='MA1002',
+        week_number=1,
+        lecture_url='https://www.youtube.com/watch?v=0w2rKt-G6ws',
+        lecture_title='L1.1: Introduction and types of Data - Basic definitions',
+        transcript_url='https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Lecture%201.1.vtt'
+    )
+    db.session.add(content)
+    db.session.commit()
 
     # Insert some random student for testing
     UserService.create_user('frodo', 'baggins', 'frodo@shire.com', 'password123')
