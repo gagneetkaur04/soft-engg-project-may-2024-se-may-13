@@ -15,7 +15,7 @@ def create_app(config_name='development'):
     api.init_app(app)
     jwt.init_app(app)
 
-    from .routes import courses_ns, auth_ns, notes_ns, assignments_ns, chat_ns, prog_assignments_ns
+    from .routes import courses_ns, auth_ns, notes_ns, assignments_ns, chat_ns, prog_assignments_ns, summary_ns
     
     # register namespaces
     api.add_namespace(courses_ns)
@@ -24,5 +24,6 @@ def create_app(config_name='development'):
     api.add_namespace(assignments_ns)
     api.add_namespace(chat_ns)
     api.add_namespace(prog_assignments_ns)
+    api.add_namespace(summary_ns)
 
     return app
