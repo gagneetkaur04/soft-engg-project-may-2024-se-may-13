@@ -1,67 +1,73 @@
 <template>
   <div class="board">
-    <div class="board_body d-flex justify-content-between">
-      <div class="brand_space">
-        <div class="logo"></div>
-        <div>
-          <h2>Padh.AI</h2>
+    <div class="container board_body">
+      <div class="col">
+        <div class="brand_space">
+          <div class="logo">
+            <img src="@/assets/padhai.png" alt="logo">
+          </div>
+          <div class="brand_text">
+            <h2>Padh.AI</h2>
+          </div>
         </div>
       </div>
-      <form method="POST" @submit.prevent="handleFormSubmit">
-        <div class="form-floating mb-3">
-          <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.firstname.$error }" v-model="firstname"
-            name="firstname" id="floatingInput1" placeholder="firstname" autocomplete="off" />
-          <label for="floatingInput1">firstname</label>
-          <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.firstname.$error">
-            <span>{{ v$.firstname.$errors[0].$message }}</span>
+      <div class="col">
+        <form method="POST" @submit.prevent="handleFormSubmit" class="float-right">
+          <div class="form-floating mb-3">
+            <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.first_name.$error }"
+              v-model="first_name" name="first_name" id="floatingInput1" placeholder="first_name" autocomplete="off" />
+            <label for="floatingInput1">first_name</label>
+            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.first_name.$error">
+              <span>{{ v$.first_name.$errors[0].$message }}</span>
+            </div>
           </div>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.lastname.$error }" v-model="lastname"
-            name="lastname" id="floatingInput2" placeholder="lastname" autocomplete="off" />
-          <label for="floatingInput1">lastname</label>
-          <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.lastname.$error">
-            <span>{{ v$.lastname.$errors[0].$message }}</span>
+          <div class="form-floating mb-3">
+            <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.last_name.$error }" v-model="last_name"
+              name="last_name" id="floatingInput2" placeholder="last_name" autocomplete="off" />
+            <label for="floatingInput1">last_name</label>
+            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.last_name.$error">
+              <span>{{ v$.last_name.$errors[0].$message }}</span>
+            </div>
           </div>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
-            name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
-          <label for="floatingInput2">email</label>
-          <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
-            <span>{{ v$.email.$errors[0].$message }}</span>
+          <div class="form-floating mb-3">
+            <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
+              name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
+            <label for="floatingInput2">email</label>
+            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
+              <span>{{ v$.email.$errors[0].$message }}</span>
+            </div>
           </div>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" :class="{ 'form-control': true, 'is-invalid': v$.password.$error }" v-model="password"
-            name="password" id="floatingPassword1" placeholder="Password" autocomplete="off" />
-          <label for="floatingPassword1">Password</label>
-          <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.password.$error">
-            <span>{{ v$.password.$errors[0].$message }}</span>
+          <div class="form-floating mb-3">
+            <input type="password" :class="{ 'form-control': true, 'is-invalid': v$.password.$error }"
+              v-model="password" name="password" id="floatingPassword1" placeholder="Password" autocomplete="off" />
+            <label for="floatingPassword1">Password</label>
+            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.password.$error">
+              <span>{{ v$.password.$errors[0].$message }}</span>
+            </div>
           </div>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" :class="{
-            'form-control': true,
-            'is-invalid': v$.repeatPassword.$error,
-          }" v-model="repeatPassword" name="repeat_password" id="floatingPassword2"
-            placeholder="repeat the same password as above" autocomplete="off" />
-          <label for="floatingPassword2">Repeat Password</label>
-          <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.repeatPassword.$error">
-            <span>{{ v$.repeatPassword.$errors[0].$message }}</span>
+          <div class="form-floating mb-3">
+            <input type="password" :class="{
+              'form-control': true,
+              'is-invalid': v$.repeatPassword.$error,
+            }" v-model="repeatPassword" name="repeat_password" id="floatingPassword2"
+              placeholder="repeat the same password as above" autocomplete="off" />
+            <label for="floatingPassword2">Repeat Password</label>
+            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.repeatPassword.$error">
+              <span>{{ v$.repeatPassword.$errors[0].$message }}</span>
+            </div>
           </div>
-        </div>
-        <button class="w-100 btn btn-lg" type="submit">
-          Sign Up
-        </button>
-        <hr class="my-4" />
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="errStatus">
-          <strong>{{ errormsg }}</strong>.
-          <button type="button" class="btn-close" aria-label="Close" @click="errStatus = false"></button>
-        </div>
-        <small>Have an account? <router-link to="/login">Login now</router-link>
-        </small>
-      </form>
+          <button class="w-100 btn btn-lg btn-submit" type="submit">
+            Sign Up
+          </button>
+          <hr class="my-4" />
+          <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="errStatus">
+            <strong>{{ errormsg }}</strong>.
+            <button type="button" class="btn-close" aria-label="Close" @click="errStatus = false"></button>
+          </div>
+          <small>Have an account? <router-link to="/login">Login now</router-link>
+          </small>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +81,7 @@ import {
   sameAs,
   helpers,
 } from "@vuelidate/validators";
+import axios from "axios";
 export default {
   setup() {
     return {
@@ -84,8 +91,8 @@ export default {
   name: "SignUp",
   data: function () {
     return {
-      firstname: "",
-      lastname: "",
+      first_name: "",
+      last_name: "",
       email: " ",
       password: "",
       repeatPassword: "",
@@ -95,23 +102,23 @@ export default {
   },
   validations() {
     return {
-      firstname: {
+      first_name: {
         required: helpers.withMessage(
-          "The firstname field is required",
+          "The first_name field is required",
           required
         ),
         alphaNum: helpers.withMessage(
-          "The firstname must contain only letters and numbers",
+          "The first_name must contain only letters and numbers",
           alphaNum
         ),
       },
-      lastname: {
+      last_name: {
         required: helpers.withMessage(
-          "The lastname field is required",
+          "The last_name field is required",
           required
         ),
         alphaNum: helpers.withMessage(
-          "The lastname must contain only letters and numbers",
+          "The last_name must contain only letters and numbers",
           alphaNum
         ),
       },
@@ -138,9 +145,35 @@ export default {
     };
   },
   methods: {
-      handleFormSubmit() {
-        console.log("test")
-        this.v$.$touch();
+    async handleFormSubmit() {
+      let payload = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        password: this.password,
+      }
+      let request = {
+        url: "http://localhost:5000/auth/register",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        data: JSON.stringify(payload),
+      };
+      // let response = await axios(request)
+      // console.log(response)
+      // alert(response.data)
+      await axios(request).then((response) => {
+        console.log(response);
+        this.$router.push("/login");
+      })
+        .catch((error) => {
+          console.log(error.response.data.errStatus);
+          this.errormsg = error.response.data.message;
+          this.errStatus = true;
+        });
+      this.v$.$touch();
     }
   }
 };
@@ -151,15 +184,54 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--light-green);
+  height: 100vh;
+  margin: 0;
 }
 
 .board {
   background-color: var(--ivory);
   border-radius: 2em;
   box-shadow: 5px 5px 15px 2px var(--dark-green);
+  width: 90%;
+  max-width: 1200px;
+  padding: 1em;
 }
 
 .board_body {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
   padding: 1em;
+}
+
+.brand_space {
+  flex: 1;
+  padding-right: 2em;
+  /* Takes up equal space */
+}
+
+.brand_text {
+  display: flex;
+  padding-top: 2em;
+  justify-content: center;
+}
+
+form {
+  flex: 2;
+  /* Takes up twice the space of brand_space */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  max-width: 300px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5em;
 }
 </style>

@@ -5,12 +5,12 @@
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+  width: 100%;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: hsla(160, 100%, 37%, 1) !important;
   transition: 0.4s;
   padding: 3px;
 }
@@ -26,10 +26,13 @@ a,
     display: flex;
     place-items: center;
   }
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.btn-submit {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white) !important;
+  --bs-btn-bg: var(--dark-green) !important;
+  --bs-btn-border-color: var(--dark-green) !important;
+  --bs-btn-hover-bg: var(--onix) !important;
+  --bs-btn-hover-color: var(--bs-white) !important;
 }
