@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_restx import Api
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 
 db = SQLAlchemy()
@@ -14,6 +15,7 @@ def create_app(config_name='development'):
     db.init_app(app)
     api.init_app(app)
     jwt.init_app(app)
+    CORS(app)
 
     from .routes import courses_ns, auth_ns, notes_ns, assignments_ns, chat_ns, prog_assignments_ns, summary_ns
     
