@@ -1,5 +1,7 @@
 import json
 from app.models import CourseContent, Instructor, Course
+from .assignment_data import insert_default_assignments_mlt, insert_default_assignments_stats
+from .prog_assignment_data import insert_default_programming_assignments
 
 from app import db
 
@@ -51,3 +53,15 @@ def insert_default_courses():
 
     db.session.add_all([intro_python, stats1, mlt])
     db.session.commit()
+
+def initialize_db_and_data():
+    db.create_all()
+    insert_default_instructors()
+    insert_default_courses()
+    insert_default_assignments_mlt()
+    insert_default_assignments_stats()
+    insert_default_programming_assignments()
+    insert_course_contents_from_json('app/utils/data/cs1002.json')
+    insert_course_contents_from_json('app/utils/data/ma1002.json')
+    insert_course_contents_from_json('app/utils/data/cs2007.json')
+    print('Database initialized with default data')
