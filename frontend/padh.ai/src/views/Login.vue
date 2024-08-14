@@ -1,45 +1,50 @@
 <template>
-  <div class="board">
-    <div class="container board_body">
-      <div class="col">
-        <div class="brand_space">
-          <div class="logo">
-            <img src="@/assets/padhai.png" alt="logo">
-          </div>
-          <div class="brand_text">
-            <h2>Padh.AI</h2>
+  <div class="box">
+    <div class="board">
+      <div class="container board_body">
+        <div class="col">
+          <div class="brand_space">
+            <div class="logo">
+              <img src="@/assets/padhai.png" alt="logo">
+            </div>
+            <div class="brand_text">
+              <div>
+                <h2>Sign in</h2>
+                <span>to visit padhai</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <form method="POST" @submit.prevent="handleFormSubmit" class="float-right">
-          <div class="form-floating mb-3">
-            <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
-              name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
-            <label for="floatingInput2">email</label>
-            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
-              <span>{{ v$.email.$errors[0].$message }}</span>
+        <div class="col">
+          <form method="POST" @submit.prevent="handleFormSubmit" class="float-right">
+            <div class="form-floating mb-3">
+              <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
+                name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
+              <label for="floatingInput2">email</label>
+              <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
+                <span>{{ v$.email.$errors[0].$message }}</span>
+              </div>
             </div>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="password" :class="{ 'form-control': true, 'is-invalid': v$.password.$error }"
-              v-model="password" name="password" id="floatingPassword1" placeholder="Password" autocomplete="off" />
-            <label for="floatingPassword1">Password</label>
-            <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.password.$error">
-              <span>{{ v$.password.$errors[0].$message }}</span>
+            <div class="form-floating mb-3">
+              <input type="password" :class="{ 'form-control': true, 'is-invalid': v$.password.$error }"
+                v-model="password" name="password" id="floatingPassword1" placeholder="Password" autocomplete="off" />
+              <label for="floatingPassword1">Password</label>
+              <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.password.$error">
+                <span>{{ v$.password.$errors[0].$message }}</span>
+              </div>
             </div>
-          </div>
-          <button class="w-100 btn btn-lg btn-submit" type="submit">
-            Login Now
-          </button>
-          <hr class="my-4" />
-          <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="errStatus">
-            <strong>{{ errormsg }}</strong>.
-            <button type="button" class="btn-close" aria-label="Close" @click="errStatus = false"></button>
-          </div>
-          <small>Create an account? <router-link to="/signup">Sign Up now</router-link>
-          </small>
-        </form>
+            <button class="w-100 btn btn-lg btn-submit" type="submit">
+              Login Now
+            </button>
+            <hr class="my-4" />
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="errStatus">
+              <strong>{{ errormsg }}</strong>.
+              <button type="button" class="btn-close" aria-label="Close" @click="errStatus = false"></button>
+            </div>
+            <small>Create an account? <router-link to="/signup">Sign Up now</router-link>
+            </small>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -99,6 +104,7 @@ export default {
         data: JSON.stringify(payload),
       };
       await axios(request).then((response) => {
+        localStorage.setItem("email", this.email);
         localStorage.setItem("Auth-Token", response.data.access_token);
         this.$router.push("/dashboard");
       })
@@ -114,21 +120,19 @@ export default {
 </script>
 <style>
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   background-color: var(--light-green);
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
-.board {
-  background-color: var(--ivory);
-  border-radius: 2em;
-  box-shadow: 5px 5px 15px 2px var(--dark-green);
-  width: 90%;
-  max-width: 1200px;
-  padding: 1em;
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 5em 0 5em;
 }
 
 .board_body {

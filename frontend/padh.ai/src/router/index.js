@@ -69,22 +69,9 @@ const router = createRouter({
       path: "/logout",
       name: "logout",
       async beforeEnter() {
-        let request = {
-          url: __API_URL__ + "logout",
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("Auth-Token")}`,
-            "content-type": "application/json",
-          },
-        };
-        let response = await axios(request);
-        if (response.status === 200) {
-          localStorage.removeItem("Auth-Token");
-          return "/login";
-        } else {
-          alert("Logout failed returning to dashboard");
-          return "/dashboard";
-        }
+        localStorage.removeItem("email");
+        localStorage.removeItem("Auth-Token");
+        return "/login";
       },
     },
   ],
