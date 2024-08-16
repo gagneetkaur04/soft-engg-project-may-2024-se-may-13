@@ -48,7 +48,16 @@ const router = createRouter({
       path: "/course/:courseId",
       name: "course",
       component: Course,
-      props: (route) => ({ contentId: route.params.contentId }),
+      beforeEnter() {
+        if (!localStorage.getItem("Auth-Token")) {
+          return "/login";
+        }
+      },
+    },
+    {
+      path: "/course/:courseId/about",
+      name: "courseInfo",
+      component: Course,
       beforeEnter() {
         if (!localStorage.getItem("Auth-Token")) {
           return "/login";

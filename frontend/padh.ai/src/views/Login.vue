@@ -19,7 +19,7 @@
           <form method="POST" @submit.prevent="handleFormSubmit" class="float-right">
             <div class="form-floating mb-3">
               <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
-                name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
+                name="email" id="floatingInput2" placeholder="email" autocomplete="off" />
               <label for="floatingInput2">email</label>
               <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
                 <span>{{ v$.email.$errors[0].$message }}</span>
@@ -95,7 +95,7 @@ export default {
         password: this.password,
       }
       let request = {
-        url: "http://localhost:5000/auth/login",
+        url: __API_URL__ + "auth/login",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
