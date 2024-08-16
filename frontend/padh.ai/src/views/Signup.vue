@@ -26,7 +26,7 @@
             <div class="form-floating mb-3">
               <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.last_name.$error }"
                 v-model="last_name" name="last_name" id="floatingInput2" placeholder="last_name" autocomplete="off" />
-              <label for="floatingInput1">last_name</label>
+              <label for="floatingInput2">last_name</label>
               <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.last_name.$error">
                 <span>{{ v$.last_name.$errors[0].$message }}</span>
               </div>
@@ -34,7 +34,7 @@
             <div class="form-floating mb-3">
               <input type="email" :class="{ 'form-control': true, 'is-invalid': v$.email.$error }" v-model="email"
                 name="email" id="floatingInput3" placeholder="email" autocomplete="off" />
-              <label for="floatingInput2">email</label>
+              <label for="floatingInput3">email</label>
               <div class="invalid-feedback" style="color: #dc3545 !important" v-if="v$.email.$error">
                 <span>{{ v$.email.$errors[0].$message }}</span>
               </div>
@@ -148,35 +148,39 @@ export default {
     };
   },
   methods: {
+
     async handleFormSubmit() {
-      let payload = {
-        first_name: this.first_name,
-        last_name: this.last_name,
-        email: this.email,
-        password: this.password,
-      }
-      let request = {
-        url: "http://localhost:5000/auth/register",
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        data: JSON.stringify(payload),
-      };
-      // let response = await axios(request)
-      // console.log(response)
-      // alert(response.data)
-      await axios(request).then((response) => {
-        console.log(response);
-        this.$router.push("/login");
-      })
-        .catch((error) => {
-          console.log(error.response.data.errStatus);
-          this.errormsg = error.response.data.message;
-          this.errStatus = true;
-        });
       this.v$.$touch();
+      if (this.first_name) {
+        let payload = {
+          first_name: this.first_name,
+          last_name: this.last_name,
+          email: this.email,
+          password: this.password,
+        }
+        let request = {
+          url: __API_URL__ + "auth/register",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          data: JSON.stringify(payload),
+        };
+        // let response = await axios(request)
+        // console.log(response)
+        // alert(response.data)
+        await axios(request).then((response) => {
+          console.log(response);
+          alert("User registered successfully, redirecting to login page");
+          this.$router.push("/login");
+        })
+          .catch((error) => {
+            console.log(error.response.data.errStatus);
+            this.errormsg = error.response.data.message;
+            this.errStatus = true;
+          });
+      }
     }
   }
 };
@@ -190,7 +194,7 @@ body {
   margin: 0;
 }
 
-.box{
+.box {
   display: flex;
   justify-content: center;
   align-items: center;
