@@ -84,3 +84,21 @@ class CourseContents(Resource):
         if course_contents:
             return course_contents
         api.abort(404, f"Course {id} doesn't exist or has no content")
+
+@api.route('/<string:id>/contents/<int:content_id>')
+@api.param('id', 'The course identifier')
+@api.param('content_id', 'The content identifier')
+class CourseContent(Resource):
+    @api.marshal_with(course_content_model)
+    @api.doc(security="jsonWebToken")
+    @jwt_required()
+    def get(self, id, content_id):
+        """Fetch a specific content of a specific course"""
+        course = CourseService.get_course_by_id(id)
+        if not course:
+            api.abort(404, f"Course {id} doesn't exist")
+        
+        course_content = CourseService.get_course_content_by_id(id, content_id)
+        if course_content:
+            return course_content
+        api.abort(404, f"Content ID : {content_id} not found in course {id}")

@@ -44,3 +44,12 @@ class CourseService:
             ]
         }
         return result
+    
+    @staticmethod
+    def get_course_content_by_id(course_id, content_id):
+        content = CourseContent.query.get(content_id)
+        
+        # Make sure the content belongs to that specific course
+        if content and content.course_id == course_id:
+            return content
+        return None
