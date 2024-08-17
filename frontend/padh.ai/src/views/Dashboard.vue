@@ -1,16 +1,22 @@
 <template>
   <div>
-    <NavBar></NavBar>
-    
-    <div class="container mt-4">
+    <NavBar></NavBar>  
+    <div class="d-flex justify-content-center align-items-center pt-5 px-4">
       <div class="row">
-        <div v-for="course in courses" :key="course.course_id" class="col-md-4 mb-4">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">{{ course.title }}</h5>
+        <h1>Dashboard</h1>
+        <h3 class="mx-1">Current Courses</h3>
+        
+      <div class="container mt-4 ">
+        <div class="row">
+          <div v-for="course in courses" :key="course.course_id" class="col-md-4 mb-4">
+            <div class="card custom-card">
+              <div class="card-body justify-content-center">
+                <h5 class="card-title">{{ course.title }}</h5>
+              </div>
+              <div class="card-footer footer-radius">
+                <router-link :to="'/course/' + course.course_id" class="btn">View Course</router-link>
+              </div>
             </div>
-            <div class="card-footer">
-              <router-link :to="'/course/' + course.course_id" class="btn">View Course</router-link>
             </div>
           </div>
         </div>
@@ -66,6 +72,11 @@ export default {
 </script>
 
 <style scoped>
+
+.container{
+  padding-top: 5%;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -102,4 +113,15 @@ export default {
   background-color: #0056b3;
   border-color: #004085;
 }
+
+.custom-card {
+  height: 250px;
+  width: auto;
+  border-radius: 15px;
+}
+.footer-radius{
+  border-radius: 15px;
+  
+}
+
 </style>
