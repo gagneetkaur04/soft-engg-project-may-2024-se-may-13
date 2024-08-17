@@ -5,15 +5,33 @@
             <SideNavBar :coursePage=true ref="sideNav"></SideNavBar>
             <div v-if="courseInfoFlag">
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" v-if="courseInfo">
-                    email: {{ courseInfo.instructor.email }} <br>
-                    first_name: {{ courseInfo.instructor.first_name }} <br>
-                    last_name: {{ courseInfo.instructor.last_name }} <br>
-                    course_id: {{ courseInfo.course_id }}
-                </div>
+    <div class="card my-4 shadow-sm" style="width: 40%;">
+        <div class="card-header bg-onix text-white">
+            <h5 class="mb-0">Course Information</h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-secondary">Course Title</h5>
+            <p class="card-text">{{ courseInfo.title }}</p>
+            <h6 class="card-title text-secondary">Course ID:</h6>
+            <p class="card-text">{{ courseInfo.course_id }}</p>
+
+            <h6 class="card-title text-secondary">Instructor:</h6>
+            <p class="card-text mb-1">
+                {{ courseInfo.instructor.first_name }} 
+                {{ courseInfo.instructor.last_name }}
+            </p>
+            <p class="card-text">
+                <a href="mailto:{{ courseInfo.instructor.email }}" class="text-decoration-none">
+                    {{ courseInfo.instructor.email }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
             </div>
             <div v-else>
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div class="containter pt-5">
+                    <div class="container pt-5">
                         <h2> {{ weekContents.lecture_title }} </h2>
                         <iframe width="100%" height="530" :src=videoUrl title="YouTube video player" frameborder="0"
                             class="mt-2"
@@ -126,4 +144,8 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+.bg-onix{
+    background-color: #202B22;
+}
+</style>
