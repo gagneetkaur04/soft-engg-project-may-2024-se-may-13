@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="board">
+    <div class="board" style="width: 70%">
       <div class="container board_body">
         <div class="col">
           <div class="brand_space">
