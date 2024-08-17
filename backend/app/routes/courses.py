@@ -43,6 +43,10 @@ course_contents_list = api.model('CourseContentsList', {
     'weeks': fields.List(fields.Nested(week_model))
 })
 
+course_highlights_model = api.model('CourseHighlights', {
+    'highlights': fields.String
+})
+
 @api.route('/')
 class CourseList(Resource):
 
@@ -69,6 +73,19 @@ class Course(Resource):
             return course
         api.abort(404, "Course {} doesn't exist".format(id))
 
+
+@api.route('/<string:id>/highlights')
+@api.param('id', 'The course identifier')
+class CourseHighlights(Resource):
+    @api.marshal_with(course_highlights_model)
+    @api.doc(security="jsonWebToken")
+    @jwt_required()
+    def get(self, id):
+        """Generate highlights for a specific course"""
+        course_highlights = CourseService.generate_course_highlights(id)
+        if course_highlights:
+            return course_highlights
+        api.abort(404, f"Course {id} doesn't exist or has no content")
 
 @api.route('/<string:id>/contents')
 @api.param('id', 'The course identifier')
