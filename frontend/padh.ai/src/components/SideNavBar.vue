@@ -25,6 +25,18 @@
             :weekContents=value.contents :assignment=getAssignment(key) :assignmentType=getAssignmentType()>
           </SideNavItem>
         </li>
+        <li class="nav-item">
+          <div class="card border-dark mb-3">
+            <div class="nav-item text-nowrap card-header d-flex justify-content-center">
+              <div>
+                <router-link class="nav-link" aria-current="page" :to="{ path: `/course/${courseId}/highlights` }">
+                  <span data-feather="Course Highlights"></span>
+                  Course Highlights
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
