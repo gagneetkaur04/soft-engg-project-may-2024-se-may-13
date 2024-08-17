@@ -8,7 +8,10 @@
               <img src="@/assets/padhai.png" alt="logo">
             </div>
             <div class="brand_text">
-              <h2>Padh.AI</h2>
+              <div>
+                <h2>Create Account</h2>
+                <span>to access padhai</span>
+              </div>
             </div>
           </div>
         </div>
