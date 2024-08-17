@@ -17,12 +17,14 @@
           <hr width="100%" top="0" bottom="0" p-0 m-0>
         </div>
         <div class="nav-item text-wrap p-1" v-if="assignmentType == 'MCQ'">
-          <a class="align-items-center text-decoration-none" aria-expanded="false" :href="`/course/${courseId}`">
+          <a class="align-items-center text-decoration-none" aria-expanded="false"
+            :href="`/course/${courseId}?assignmentId=${assignment[0].assignments[0].assignment_id}&weekNumber=${assignment[0].week_number}`">
             <span style="font-size: 1rem;">assignment - {{ assignment[0].week_number }}</span>
           </a>
         </div>
         <div class="nav-item text-wrap p-1" v-else>
-          <a class="align-items-center text-decoration-none" aria-expanded="false" :href="`/course/${courseId}`">
+          <a class="align-items-center text-decoration-none" aria-expanded="false"
+            :href="`/course/${courseId}?progAssignmentId=${assignment[0].prog_assignment_id}`">
             <span style="font-size: 1rem;">programming assignment - {{ assignment[0].prog_assignment_id }}</span>
           </a>
         </div>

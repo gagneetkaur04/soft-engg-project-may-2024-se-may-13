@@ -13,7 +13,7 @@
             </div>
             <div v-else>
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div class="containter pt-5">
+                    <div class="containter pt-5" v-if="weekContents">
                         <h2> {{ weekContents.lecture_title }} </h2>
                         <iframe width="100%" height="530" :src=videoUrl title="YouTube video player" frameborder="0"
                             class="mt-2"
@@ -120,7 +120,6 @@ export default {
         },
         getembedURL: function (url) {
             url = url.replace("watch?v=", "embed/");
-            console.log(url);
             return url;
         },
     },
