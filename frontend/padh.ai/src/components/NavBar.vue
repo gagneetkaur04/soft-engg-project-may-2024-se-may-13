@@ -1,6 +1,6 @@
 <template>
-  <header class="navbar navbar-dark sticky-top topnav flex-md-nowrap p-0 shadow fixed-top">
-    <router-link to="/logout" class="navbar-brand col-md-3 col-lg-2 me-0 px-4 fs-4 d-flex">
+  <header class="navbar navbar-dark sticky-top topnav flex-md-nowrap p-0 shadow">
+    <router-link to="/dashboard" class="navbar-brand col-md-3 col-lg-2 me-0 px-4 fs-4 d-flex">
       <img src="../assets/padhai_logo.png" alt="padhai" width="50" height="50"> 
       <span style="align-self: flex-end;">PADH.AI</span>
     </router-link>

@@ -3,14 +3,23 @@
     <div class="container-fluid">
         <div class="row">
             <SideNavBar :coursePage=true ref="sideNav"></SideNavBar>
-            <div v-if="courseInfoFlag">
-                <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" v-if="courseInfo">
-                    <h2 class="align-center"> {{ courseInfo.title }}</h2>
-                    <div v-html="renderMarkdown(renderKatex(courseInfo.description))">
+            <div v-if="assignmentInfoFlag">
+                <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4" v-if="assignmentInfo">
+                    <div class="d-flex">
+                        <h1 class="mx-auto"> {{ assignmentInfo.title }}</h1>
+                    </div>
+                    <div v-html="renderMarkdown(renderKatex(assignmentInfo.description))" class="pt-4">
                     </div>
                 </div>
             </div>
-            <CodeEditor></CodeEditor>
+            <div v-if="assignmentGrade">
+                <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+                    <div class="d-flex">
+                        <h5> You've submitted this assignment, your score is {{ assignmentGrade }}</h5>
+                    </div>
+                </div>
+            </div>
+            <CodeEditor :flag="flag" :placeholder="placeholder" v-if="loadCodeEditor"></CodeEditor>
         </div>
     </div>
     <ChatWindow></ChatWindow>
@@ -34,16 +43,17 @@ export default {
     },
     data() {
         return {
-            courseInfo: null,
-            courseInfoFlag: true,
+            assignmentInfo: null,
+            assignmentInfoFlag: true,
             courseId: this.uppercase(this.$route.params.courseId),
-            contentId: null,
-            weekContents: null,
-            videoUrl: "https://www.youtube.com/embed/8ndsDXohLMQ",
-            subtitleUrl: "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec1W1.vtt"
+            assignmentGrade: null,
+            placeholder: "Enter your python code here",
+            flag: false,
+            grade: null,
+            loadCodeEditor: false,
         }
     },
-    beforeMount() {
+    async beforeMount() {
         let request = {
             url: __API_URL__ + "programming_assignments" + `/${this.$route.query.progAssignmentId}`,
             method: "GET",
@@ -54,9 +64,35 @@ export default {
             },
             data: null,
         };
-        axios(request)
+        await axios(request)
             .then((response) => {
-                this.courseInfo = response.data;
+                this.assignmentInfo = response.data;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        let request_2 = {
+            url: __API_URL__ + "programming_assignments" + '/grades',
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem('Auth-Token')}`,
+                "Access-Control-Allow-Origin": "*",
+            },
+        }
+        await axios(request_2)
+            .then((response) => {
+                this.grade = response.data;
+                if (this.grade.length > 0) {
+                    for (let i = 0; i < this.grade.length; i++) {
+                        if (this.grade[i].prog_assignment_id == this.$route.query.progAssignmentId) {
+                            this.assignmentGrade = this.grade[i].score;
+                            this.flag = true;
+                            this.placeholder = this.grade[i].code;
+                        }
+                    }
+                }
+                this.loadCodeEditor = true;
             })
             .catch((error) => {
                 console.log(error);

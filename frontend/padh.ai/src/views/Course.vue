@@ -2,7 +2,6 @@
   <CourseProgAssignment v-if="progAssignmentQueryParam"></CourseProgAssignment>
   <CourseAssignment v-if="assignmentQueryParam"></CourseAssignment>
   <CourseMain v-if="!progAssignmentQueryParam && !assignmentQueryParam"></CourseMain>
-
 </template>
 <script>
 import CourseMain from '@/components/CourseMain.vue';
@@ -24,8 +23,7 @@ export default {
   },
 }
 </script>
-<style>
-</style>
+<style></style>
 <!-- <template>
   <NavBar></NavBar>
   <div class="container-fluid">
