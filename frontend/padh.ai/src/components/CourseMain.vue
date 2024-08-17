@@ -5,29 +5,29 @@
             <SideNavBar :coursePage=true ref="sideNav"></SideNavBar>
             <div v-if="courseInfoFlag">
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4" v-if="courseInfo">
-    <div class="card my-4 shadow-sm" style="width: 40%;">
-        <div class="card-header bg-onix text-white">
-            <h5 class="mb-0">Course Information</h5>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title text-secondary">Course Title</h5>
-            <p class="card-text">{{ courseInfo.title }}</p>
-            <h6 class="card-title text-secondary">Course ID:</h6>
-            <p class="card-text">{{ courseInfo.course_id }}</p>
+                    <div class="card my-4 shadow-sm" style="width: 40%;">
+                        <div class="card-header bg-onix text-white">
+                            <h5 class="mb-0">Course Information</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary">Course Title</h5>
+                            <p class="card-text">{{ courseInfo.title }}</p>
+                            <h6 class="card-title text-secondary">Course ID:</h6>
+                            <p class="card-text">{{ courseInfo.course_id }}</p>
 
-            <h6 class="card-title text-secondary">Instructor:</h6>
-            <p class="card-text mb-1">
-                {{ courseInfo.instructor.first_name }} 
-                {{ courseInfo.instructor.last_name }}
-            </p>
-            <p class="card-text">
-                <a href="mailto:{{ courseInfo.instructor.email }}" class="text-decoration-none">
-                    {{ courseInfo.instructor.email }}
-                </a>
-            </p>
-        </div>
-    </div>
-</div>
+                            <h6 class="card-title text-secondary">Instructor:</h6>
+                            <p class="card-text mb-1">
+                                {{ courseInfo.instructor.first_name }}
+                                {{ courseInfo.instructor.last_name }}
+                            </p>
+                            <p class="card-text">
+                                <a href="mailto:{{ courseInfo.instructor.email }}" class="text-decoration-none">
+                                    {{ courseInfo.instructor.email }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div v-else>
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -37,6 +37,11 @@
                             class="mt-2"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <Notes></Notes>
+                    <keyPoints @child-data="receiveDataFromChild"></keyPoints>
+                    <div class="container mt-5">
+                        <p v-html="lectureSummary"></p>
                     </div>
                 </div>
             </div>
@@ -49,12 +54,16 @@ import axios from 'axios';
 import NavBar from '@/components/NavBar.vue';
 import SideNavBar from '@/components/SideNavBar.vue';
 import ChatWindow from '@/components/ChatWindow.vue';
+import Notes from './Notes.vue';
+import keyPoints from './keyPoints.vue';
 export default {
     name: 'CourseMain',
     components: {
         NavBar,
         SideNavBar,
         ChatWindow,
+        Notes,
+        keyPoints,
     },
     data() {
         return {
@@ -64,7 +73,8 @@ export default {
             contentId: null,
             weekContents: null,
             videoUrl: "https://www.youtube.com/embed/8ndsDXohLMQ",
-            subtitleUrl: "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec1W1.vtt"
+            subtitleUrl: "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec1W1.vtt",
+            lectureSummary: null,
         }
     },
     async beforeMount() {
@@ -140,11 +150,14 @@ export default {
             url = url.replace("watch?v=", "embed/");
             return url;
         },
+        receiveDataFromChild(data) {
+            this.lectureSummary = data;
+        }
     },
 }
 </script>
 <style>
-.bg-onix{
+.bg-onix {
     background-color: #202B22;
 }
 </style>

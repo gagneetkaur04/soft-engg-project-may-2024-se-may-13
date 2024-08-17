@@ -8,7 +8,7 @@
             </div>
             <div v-if="submittedFlag">
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-                    <h3>Assignment Score: {{ assignmentGrade }}</h3>
+                    <h3>Assignment Score: {{ assignmentGrade.toFixed(2) }}</h3>
                 </div>
             </div>
             <form @submit.prevent="submitQuiz" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">

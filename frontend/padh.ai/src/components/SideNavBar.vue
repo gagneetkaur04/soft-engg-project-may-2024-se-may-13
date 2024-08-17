@@ -2,8 +2,8 @@
   <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse" style="">
     <div class="position-sticky pt-3">
       <h4 class="d-flex justify-content-between align-items-center mt-4 mb-1" v-if="coursePage">
-        <router-link class="nav-link active" aria-current="page" :to="{ path: `/course/${courseId}` }">{{ courseTitle
-          }}</router-link>
+        <a class="nav-link active" aria-current="page" :href="`/course/${courseId}`">{{ courseTitle
+          }}</a>
       </h4>
       <hr style="color: white;">
       <ul class="nav flex-column mb-2">
@@ -11,10 +11,10 @@
           <div class="card border-dark mb-3">
             <div class="nav-item text-nowrap card-header d-flex justify-content-center" @click="toggleFlag">
               <div>
-                <router-link class="nav-link" aria-current="page" :to="{ path: `/course/${courseId}` }">
+                <a class="nav-link" aria-current="page" :href="`/course/${courseId}`">
                   <span data-feather="Course Info"></span>
                   Course Info
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
