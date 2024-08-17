@@ -15,38 +15,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row chat_background">
+            <div class="container-fluid" v-for="value in chatContents">
+              <div class="row chat_background" v-if=!checkSender(Object.keys(value)[0])>
                 <div class="col-3 col-sm-1">
                   <img src="@/assets/padhai_logo.png" class="rounded-circle" alt="logo" width="20" height="20">
                 </div>
-                <div class="col-4 col-sm-8">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis delectus nemo temporibus atque
-                  libero omnis velit neque tempore, itaque quia quos numquam aperiam, inventore repellat aut, corporis
-                  error vitae odit?
+                <div class="col-4 col-sm-8" v-html="renderMarkdown(renderKatex(value.ai_message))">
                 </div>
               </div>
-              <div class="row chat_background">
-                <div class="col-3 col-sm-1">
-                  <img src="@/assets/padhai_logo.png" class="rounded-circle" alt="logo" width="20" height="20">
-                </div>
-                <div class="col-4 col-sm-8">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis delectus nemo temporibus atque
-                  libero omnis velit neque tempore, itaque quia quos numquam aperiam, inventore repellat aut, corporis
-                  error vitae odit?
-                </div>
-              </div>
-              <div class="row chat_user_background">
+              <div class="row chat_user_background" v-if=checkSender(Object.keys(value)[0])>
                 <div class="col-md-8 ms-auto">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis delectus nemo temporibus atque
-                  libero omnis velit neque tempore, itaque quia quos numquam aperiam, inventore repellat aut, corporis
-                  error vitae odit?
+                  {{ value.user }}
                 </div>
               </div>
             </div>
@@ -55,8 +34,9 @@
             <form @submit.prevent="handleForm">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Type your message here"
-                  aria-label="Type your message here" aria-describedby="button-addon2" v-model="chatMsg">
-                <button class="btn send_btn" type="button" id="button-addon2"
+                  aria-label="Type your message here" aria-describedby="button-addon2" v-model="chatMsg"
+                  v-bind:disabled="toggleStatus" id="chatInput">
+                <button class="btn send_btn" type="submit" id="button-addon2"
                   v-bind:disabled="toggleStatus">Send</button>
               </div>
             </form>
@@ -67,29 +47,87 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
+import { marked } from 'marked';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 export default {
   name: 'ChatWindow',
   data: function () {
     return {
       toggleStatus: false,
-      chatContent: null,
+      chatContents: null,
       chatMsg: "",
+      conversationId: null,
     }
   },
   methods: {
     async handleForm() {
       this.toggleStatus = !this.toggleStatus;
-      let request = {
-        url: __API_URL__ + "chat/start",
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem('Auth-Token')}`,
-          "Access-Control-Allow-Origin": "*",
-        },
-      };
-    }
-  }
+      if (this.conversationId == null) {
+        let request = {
+          url: __API_URL__ + "chat/start",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('Auth-Token')}`,
+            "Access-Control-Allow-Origin": "*",
+          },
+          data: JSON.stringify({ "message": this.chatMsg }),
+        };
+        this.chatContents = [{ "user": this.chatMsg }];
+        this.chatMsg = "";
+        await axios(request).then((response) => {
+          this.conversationId = response.data.conversation.conversation_id;
+          this.chatContents.push({ "ai_message": response.data.ai_message.message_text });
+          this.toggleStatus = !this.toggleStatus;
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+      else {
+        let request = {
+          url: __API_URL__ + "chat/continue/" + `${this.conversationId}`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem('Auth-Token')}`,
+            "Access-Control-Allow-Origin": "*",
+          },
+          data: JSON.stringify({ "message": this.chatMsg }),
+        };
+        this.chatContents.push({ "user": this.chatMsg });
+        this.chatMsg = "";
+        await axios(request).then((response) => {
+          this.chatContents.push({ "ai_message": response.data.ai_message.message_text });
+          this.toggleStatus = !this.toggleStatus;
+        }).catch((error) => {
+          console.log(error);
+        });
+      }
+    },
+    checkSender(key) {
+      if (key === 'user') {
+        return true;
+      }
+      else {
+        return false;
+      }
+    },
+    renderKatex(text) {
+      return text.replace(/\$\$([\s\S]*?)\$\$/g, (match, p1) => {
+        return `<span class="katex">${katex.renderToString(p1, { throwOnError: false })}</span>`;
+      }).replace(/\$([\s\S]*?)\$/g, (match, p1) => {
+        return `<span class="katex">${katex.renderToString(p1, { throwOnError: false })}</span>`;
+      });
+      // }).replace(/<code>([\s\S]*?)<\/code>/g, (match, latex) => {
+      //   return `<span class="katex">${katex.renderToString(latex, { displayMode: false })}</span>`;
+      // });
+    },
+    renderMarkdown(text) {
+      return marked(text);
+    },
+  },
 }
 </script>
 <style>
@@ -99,6 +137,7 @@ export default {
   right: 20px;
   cursor: pointer;
   z-index: 30;
+  box-shadow: 0 0 0.25rem var(--light-green);
 }
 
 #chatBox modal {

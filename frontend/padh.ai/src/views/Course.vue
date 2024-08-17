@@ -1,4 +1,32 @@
 <template>
+  <CourseProgAssignment v-if="progAssignmentQueryParam"></CourseProgAssignment>
+  <CourseAssignment v-if="assignmentQueryParam"></CourseAssignment>
+  <CourseMain v-if="!progAssignmentQueryParam && !assignmentQueryParam"></CourseMain>
+
+</template>
+<script>
+import CourseMain from '@/components/CourseMain.vue';
+import CourseAssignment from '@/components/CourseAssignment.vue';
+import CourseProgAssignment from '@/components/CourseProgAssignment.vue';
+export default {
+  name: 'Course',
+  components: {
+    CourseMain,
+    CourseAssignment,
+    CourseProgAssignment,
+  },
+  data() {
+    return {
+      contentQueryParam: this.$route.query.contentId,
+      assignmentQueryParam: this.$route.query.assignmentId,
+      progAssignmentQueryParam: this.$route.query.progAssignmentId,
+    }
+  },
+}
+</script>
+<style>
+</style>
+<!-- <template>
   <NavBar></NavBar>
   <div class="container-fluid">
     <div class="row">
@@ -14,8 +42,8 @@
       <div v-else>
         <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <div class="containter pt-5">
-            <h2> L1.1: Introduction </h2>
-            <iframe width="100%" height="530" :src=videoUrl title="YouTube video player" frameborder="0"
+            <h2> {{ weekContents.lecture_title }} </h2>
+            <iframe width="100%" height="530" :src=videoUrl title="YouTube video player" frameborder="0" class="mt-2"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
@@ -125,4 +153,4 @@ export default {
   },
 }
 </script>
-<style></style>
+<style></style> -->

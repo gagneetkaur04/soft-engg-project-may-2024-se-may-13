@@ -10,18 +10,19 @@
     <div v-if="flag">
       <div class="card-body">
         <div class="nav-item text-wrap" v-for="(value, key) in weekContents">
-          <a class="align-items-center text-decoration-none pt-1 pb-1 " aria-expanded="false">
-            <span style="font-size: 1rem;">{{ value.lecture_title }}</span>
+          <a class="align-items-center text-decoration-none pt-1 pb-1 " aria-expanded="false"
+            :href="`/course/${courseId}?contentId=${value.content_id}`">
+            <span style=" font-size: 1rem;">{{ value.lecture_title }}</span>
           </a>
           <hr width="100%" top="0" bottom="0" p-0 m-0>
         </div>
         <div class="nav-item text-wrap p-1" v-if="assignmentType == 'MCQ'">
-          <a class="align-items-center text-decoration-none" aria-expanded="false">
+          <a class="align-items-center text-decoration-none" aria-expanded="false" :href="`/course/${courseId}`">
             <span style="font-size: 1rem;">assignment - {{ assignment[0].week_number }}</span>
           </a>
         </div>
         <div class="nav-item text-wrap p-1" v-else>
-          <a class="align-items-center text-decoration-none" aria-expanded="false">
+          <a class="align-items-center text-decoration-none" aria-expanded="false" :href="`/course/${courseId}`">
             <span style="font-size: 1rem;">programming assignment - {{ assignment[0].prog_assignment_id }}</span>
           </a>
         </div>
@@ -58,11 +59,3 @@ a:hover {
   background-color: none;
 }
 </style>
-
-// week_number
-// content_id
-// lecture_title
-// lecture_url
-// transcript_url
-// assignment
-// assignment_type
