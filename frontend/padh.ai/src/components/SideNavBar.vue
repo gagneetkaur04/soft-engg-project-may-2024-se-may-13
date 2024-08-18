@@ -7,9 +7,9 @@
       </h4>
       <hr style="color: white;">
       <ul class="nav flex-column mb-2">
-        <li class="nav-item">
+        <li class="nav-item col-12">
           <div class="card border-dark mb-3">
-            <div class="nav-item text-nowrap card-header d-flex justify-content-center" @click="toggleFlag">
+            <div class="text-wrap card-header d-flex justify-content-center" @click="toggleFlag">
               <div>
                 <a class="nav-link" aria-current="page" :href="`/course/${courseId}`">
                   <span data-feather="Course Info"></span>
@@ -25,9 +25,9 @@
             :weekContents=value.contents :assignment=getAssignment(key) :assignmentType=getAssignmentType()>
           </SideNavItem>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-12">
           <div class="card border-dark mb-3">
-            <div class="nav-item text-nowrap card-header d-flex justify-content-center">
+            <div class="text-wrap card-header d-flex justify-content-center">
               <div>
                 <router-link class="nav-link" aria-current="page" :to="{ path: `/course/${courseId}/highlights` }">
                   <span data-feather="Course Highlights"></span>
@@ -195,7 +195,7 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5; 
   padding: 48px 40px 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   overflow-x: hidden;
@@ -214,15 +214,6 @@ export default {
   .sidebar {
     top: 5rem;
   }
-}
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .sidebar .nav-link {

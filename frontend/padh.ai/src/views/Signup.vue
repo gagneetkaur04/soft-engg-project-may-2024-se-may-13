@@ -1,8 +1,8 @@
 <template>
   <div class="box">
     <div class="board">
-      <div class="container board_body">
-        <div class="col">
+      <div class="container board_body row m-auto">
+        <div class="col-md-6 col-sm-12">
           <div class="brand_space">
             <div class="logo">
               <img src="@/assets/padhai.png" alt="logo">
@@ -15,7 +15,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-6 col-sm-12">
           <form method="POST" @submit.prevent="handleFormSubmit" class="float-right">
             <div class="form-floating mb-3">
               <input type="text" :class="{ 'form-control': true, 'is-invalid': v$.first_name.$error }"

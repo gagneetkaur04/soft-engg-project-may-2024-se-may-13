@@ -1,9 +1,13 @@
 <template>
   <header class="navbar navbar-dark sticky-top topnav flex-md-nowrap p-0 shadow">
     <router-link to="/dashboard" class="navbar-brand col-md-3 col-lg-2 me-0 px-4 fs-4 d-flex">
-      <img src="../assets/padhai_logo.png" alt="padhai" width="50" height="50"> 
+      <img src="../assets/padhai_logo.png" alt="padhai" width="50" height="50">
       <span style="align-self: flex-end;">PADH.AI</span>
     </router-link>
+    <button class="navbar-toggler d-md-none collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" v-if="showToggle">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="navbar-nav topnav_user">
       <div class="nav-item text-nowrap">
         <div class="dropdown px-3 float-end">
@@ -30,12 +34,20 @@ export default {
       Auth_Token: localStorage.getItem("Auth-Token"),
     }
   },
+  props: {
+    showToggle: {
+      type: Boolean,
+      default: true,
+    }
+
+  },
 }
 </script>
 <style>
-.topnav{
+.topnav {
   background-color: var(--dark-green);
 }
+
 .navbar {
   z-index: 25;
 }
@@ -46,7 +58,7 @@ export default {
   font-family: 'Roboto', sans-serif;
 }
 
-.navbar-brand a:hover{
+.navbar-brand a:hover {
   text-decoration: none;
   background-color: none;
 }
