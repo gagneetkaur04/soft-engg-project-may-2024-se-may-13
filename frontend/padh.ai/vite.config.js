@@ -12,8 +12,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  define: {
-    '__API_URL__': JSON.stringify('http://localhost:5000/')
   }
 })
