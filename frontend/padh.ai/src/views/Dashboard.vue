@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar></NavBar>  
+    <NavBar :showToggle=false></NavBar>  
     <div class="d-flex justify-content-center align-items-center pt-5 px-4">
       <div class="row">
         <h1>Dashboard</h1>
@@ -30,14 +30,12 @@
 import axios from 'axios';
 import NavBar from '@/components/NavBar.vue';
 import ChatWindow from '@/components/ChatWindow.vue';
-import SideNavBar from '@/components/SideNavBar.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     NavBar,
     ChatWindow,
-    SideNavBar,
   },
   data() {
     return {

@@ -108,9 +108,6 @@ export default {
             }).replace(/\$([\s\S]*?)\$/g, (match, p1) => {
                 return `<span class="katex">${katex.renderToString(p1, { throwOnError: false })}</span>`;
             });
-            // }).replace(/<code>([\s\S]*?)<\/code>/g, (match, latex) => {
-            //   return `<span class="katex">${katex.renderToString(latex, { displayMode: false })}</span>`;
-            // });
         },
         renderMarkdown(text) {
             return marked(text);

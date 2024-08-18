@@ -1,6 +1,6 @@
 <template>
   <div class="chat_icon" data-bs-toggle="modal" data-bs-target="#chatBox">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-chat-right-fill"
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-chat-right-fill"
       viewBox="0 0 16 16">
       <path
         d="M14 0a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
@@ -135,7 +135,7 @@ export default {
 .chat_icon {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 30px;
   cursor: pointer;
   z-index: 30;
   color: var(--dark-green);
