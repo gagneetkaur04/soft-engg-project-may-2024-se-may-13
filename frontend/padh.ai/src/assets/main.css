@@ -1,17 +1,16 @@
 @import './base.css';
 
 #app {
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 2rem;
   font-weight: normal;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
 }
 
-a {
+a,
+.green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1) !important;
+  color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
   padding: 3px;
 }
@@ -27,13 +26,10 @@ a {
     display: flex;
     place-items: center;
   }
-}
 
-.btn-submit {
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bs-white) !important;
-  --bs-btn-bg: var(--dark-green) !important;
-  --bs-btn-border-color: var(--dark-green) !important;
-  --bs-btn-hover-bg: var(--onix) !important;
-  --bs-btn-hover-color: var(--bs-white) !important;
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
 }
