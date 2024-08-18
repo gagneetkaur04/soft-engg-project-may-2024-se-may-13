@@ -122,13 +122,6 @@ This project is a Learning Management System (LMS) with integrated generative AI
    npm run dev
    ```
 
-8. Run the following commands to build and start the frontend server in prod mode.
-
-   ```sh
-   npm run build
-   npm run prod
-   ```
-
 ## API Documentation
 
 Once the application is running, you can access the Swagger UI documentation at `http://localhost:5000/docs`. This provides a comprehensive overview of all available endpoints and allows for easy testing.
