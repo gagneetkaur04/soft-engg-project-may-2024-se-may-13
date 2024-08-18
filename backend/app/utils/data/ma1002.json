@@ -1,0 +1,309 @@
+{
+    "course_id": "MA1002",
+    "forum_url": "https://discourse.onlinedegree.iitm.ac.in/c/courses/stats1-kb",
+    "title": "Statistics I",
+    "week_wise": [
+      {
+        "title": "Week 1",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "Course Overview",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Course%20Overview.vtt",
+            "yt_vid": "8p9ZcNwqG58"
+          },
+          {
+            "availability": "public",
+            "title": "L1.1: Introduction and types of Data - Basic definitions",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Lecture%201.1.vtt",
+            "yt_vid": "0w2rKt-G6ws"
+          },
+          {
+            "availability": "public",
+            "title": "L1.2: Introduction and types of Data - Understanding data",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Lecture%201.2.vtt",
+            "yt_vid": "PXYtFNTVeVY"
+          },
+          {
+            "availability": "public",
+            "title": "L1.3: Introduction and types of Data  - Classification of data",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Lecture%201.3.vtt",
+            "yt_vid": "6w71IUzKz2o"
+          },
+          {
+            "availability": "public",
+            "title": "L1.4: Introduction and types of Data - Scales of measurement",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Lecture%201.4.vtt",
+            "yt_vid": "EVGVlzMuhIo"
+          },
+          {
+            "availability": "unlisted",
+            "title": "Week 1 Tutorial 1 - Google Spreadsheets Introduction",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Tutorial%201.1.vtt",
+            "yt_vid": "d8s_xA2Cg3w"
+          },
+          {
+            "availability": "public",
+            "title": "Week 1 Tutorial 2 - Formatting Google Spreasheets ",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Tutorial%201.2.vtt",
+            "yt_vid": "wQYU9f1OvPw"
+          },
+          {
+            "availability": "public",
+            "title": "Week 1 Tutorial 3 - Spreadsheet formulae",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Tutorial%201.3.vtt",
+            "yt_vid": "MQ5DgZo97Pg"
+          },
+          {
+            "availability": "public",
+            "title": "Week 1 Tutorial 4 - Downloading and uploading spreadheets",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/20t1_ma1002/assets/img/Tutorial%201.4.vtt",
+            "yt_vid": "shwymxnbcqM"
+          }
+        ]
+      },
+      {
+        "title": "Week 2",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L2.1: Describing Categorical Data - Frequency distributions",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lecture%202.1.vtt",
+            "yt_vid": "0-PO41B6zL0"
+          },
+          {
+            "availability": "public",
+            "title": "L2.2: Describing Categorical Data - Charts of categorical data",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lecture%202.2.vtt",
+            "yt_vid": "OFDJTgEKLbE"
+          },
+          {
+            "availability": "public",
+            "title": "L2.3: Describing Categorical Data - Best practices while graphing data 1",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lecture%202.3.vtt",
+            "yt_vid": "Peh-G_M6Two"
+          },
+          {
+            "availability": "public",
+            "title": "L2.4: Describing Categorical Data - Best practices while graphing data 2",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lecture%202.4.vtt",
+            "yt_vid": "4MwZ2_iTkoo"
+          },
+          {
+            "availability": "public",
+            "title": "L2.5: Describing Categorical Data - Mode and Median",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lecture%202.5.vtt",
+            "yt_vid": "5Z8mhCgGkcE"
+          },
+          {
+            "availability": "public",
+            "title": "Week 2 Tutorial 1 - Problems Charts and Tables",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-2.1.vtt",
+            "yt_vid": "2-o31mFX8ps"
+          },
+          {
+            "availability": "public",
+            "title": "Week 2 Tutorial 2 - Problems Misleading Graphs",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-2.2.vtt",
+            "yt_vid": "mQf9-ZBy2Fw"
+          },
+          {
+            "availability": "public",
+            "title": "Week 2 Tutorial 3 - SUMIF in Google Sheets",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-2.3.vtt",
+            "yt_vid": "e2b9YpsHu_I"
+          },
+          {
+            "availability": "public",
+            "title": "Week 2 Tutorial 4 - VLOOKUP in Google Sheets",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-2.4.vtt",
+            "yt_vid": "_oiLk-rXZuY"
+          }
+        ]
+      },
+      {
+        "title": "Week 3",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L3.1: Describing Numerical Data - Frequency Tables for numerical data",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec3.1.vtt",
+            "yt_vid": "wifCmIPaBqQ"
+          },
+          {
+            "availability": "public",
+            "title": "L3.2:  Describing Numerical Data - Mean",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec3.2.vtt",
+            "yt_vid": "mT8jZkG9HjM"
+          },
+          {
+            "availability": "public",
+            "title": "L3.3: Describing Numerical Data - Median and Mode",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec3.3.vtt",
+            "yt_vid": "2qTdQjFGA94"
+          },
+          {
+            "availability": "public",
+            "title": "L3.4: Describing Numerical Data - Measures of dispersion- Range, variance and standard deviation",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec3.4.vtt",
+            "yt_vid": "Ju8cRGDTxsQ"
+          },
+          {
+            "availability": "public",
+            "title": "L3.5: Describing Numerical Data - Percentiles, Quartiles, and Interquartile range",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec3.5.vtt",
+            "yt_vid": "3pjSpNbas14"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 1",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.1.vtt",
+            "yt_vid": "PkKWQOOzLms"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 2",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.2.vtt",
+            "yt_vid": "9fG6iTtoyLU"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 3",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.3.vtt",
+            "yt_vid": "Ip5CueTv2tw"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 4",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.4.vtt",
+            "yt_vid": "QMei8SUVSAY"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 5",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.5.vtt",
+            "yt_vid": "DHzlNhbt1bY"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 6",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.6.vtt",
+            "yt_vid": "JZFDkZ5d4p4"
+          },
+          {
+            "availability": "public",
+            "title": "Week 3 Tutorial 7",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.7.vtt",
+            "yt_vid": "fxkZW_yWE1I"
+          },
+          {
+            "availability": "unlisted",
+            "title": "Week 3 Outliers Tutorial",
+            "transcript_vtt_url": "",
+            "yt_vid": "jh7Mkw3XD5I"
+          },
+          {
+            "availability": "public",
+            "title": "Box plot Tutorial",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Tutorial-3.8.vtt",
+            "yt_vid": "-zYnDBac0UY"
+          },
+          {
+            "availability": "unlisted",
+            "title": "Week 3 Percentiles and Quartiles Tutorial",
+            "transcript_vtt_url": "",
+            "yt_vid": "NZ3nQtc9gQo"
+          }
+        ]
+      },
+      {
+        "title": "Week 4",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L4.1: Association between two variables - Review of course",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.1.vtt",
+            "yt_vid": "XNPfcrDA75Y"
+          },
+          {
+            "availability": "public",
+            "title": "L4.2: Association between two categorical variables - Introduction",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.2.vtt",
+            "yt_vid": "iG9ATr_t_ZE"
+          },
+          {
+            "availability": "public",
+            "title": "L4.3: Association between two categorical variables - Relative frequencies",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.3.vtt",
+            "yt_vid": "hVC1JYKyusw"
+          },
+          {
+            "availability": "public",
+            "title": "L4.4: Association between two numerical variables - Scatterplot",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.4.vtt",
+            "yt_vid": "38019YAFyN8"
+          },
+          {
+            "availability": "public",
+            "title": "L4.5: Association between two numerical variables - Describing association",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.5.vtt",
+            "yt_vid": "mueMrzFnM2Y"
+          },
+          {
+            "availability": "public",
+            "title": "L4.6:Association between two numerical variables - Covariance",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.6.vtt",
+            "yt_vid": "0UcFJnqx6S0"
+          },
+          {
+            "availability": "public",
+            "title": "L4.7:Association between two numerical variables - Correlation",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.7.vtt",
+            "yt_vid": "v0CaodTv8zw"
+          },
+          {
+            "availability": "public",
+            "title": "L4.8: Association between two numerical variables - Fitting a line",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.8.vtt",
+            "yt_vid": "1-9_vRZV-ck"
+          },
+          {
+            "availability": "public",
+            "title": "L4.9: Association between categorical and numerical variables",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/20t1_ma1002/assets/img/Lec-4.9.vtt",
+            "yt_vid": "0q40C-Qu5TE"
+          },
+          {
+            "availability": "public",
+            "title": "Week 4 Tutorial 1",
+            "transcript_vtt_url": "",
+            "yt_vid": "xvV7gJtel2Y"
+          },
+          {
+            "availability": "public",
+            "title": "Week 4 Tutorial 2",
+            "transcript_vtt_url": "",
+            "yt_vid": "DMMlyOqGoIE"
+          },
+          {
+            "availability": "public",
+            "title": "Week 4 Tutorial 3",
+            "transcript_vtt_url": "",
+            "yt_vid": "_WqOOAjHgGI"
+          },
+          {
+            "availability": "public",
+            "title": "Week 4 Tutorial 4",
+            "transcript_vtt_url": "",
+            "yt_vid": "3emHGA7-YMk"
+          },
+          {
+            "availability": "public",
+            "title": "Instructions related to Bonus Practice Assignment",
+            "transcript_vtt_url": "",
+            "yt_vid": "p-I9GToXFFI"
+          }
+        ]
+      }
+    ]
+  }

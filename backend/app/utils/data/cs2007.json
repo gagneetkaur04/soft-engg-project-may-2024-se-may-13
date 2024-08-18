@@ -1,0 +1,148 @@
+{
+    "course_id": "CS2007",
+    "forum_url": "https://discourse.onlinedegree.iitm.ac.in/c/courses/mlt-kb",
+    "title": "Machine Learning Techniques",
+    "week_wise": [
+      {
+        "title": "Week 1",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "1.1 Introduction to Machine Learning",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec01.vtt",
+            "yt_vid": "KMcUe7GQnf0"
+          },
+          {
+            "availability": "public",
+            "title": "1.2 Paradigms of Machine Learning",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec02.vtt",
+            "yt_vid": "ipjggYk7zXs"
+          },
+          {
+            "availability": "public",
+            "title": "1.3 Representation Learning: Part 1",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec03.vtt",
+            "yt_vid": "1V_M4JxygGk"
+          },
+          {
+            "availability": "public",
+            "title": "1.4 Representation Learning: Part 2",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec04.vtt",
+            "yt_vid": "mU6CzvuUM00"
+          },
+          {
+            "availability": "public",
+            "title": "1.5 Representation Learning: Part 3",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec05.vtt",
+            "yt_vid": "t0bA3rsZ6qM"
+          },
+          {
+            "availability": "public",
+            "title": "1.6 Principal component analysis: Part 1",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec06.vtt",
+            "yt_vid": "_GOADM-SdKU"
+          },
+          {
+            "availability": "public",
+            "title": "1.7 Principal component analysis: Part 2",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec07.vtt",
+            "yt_vid": "o__dWBLqPhQ"
+          },
+          {
+            "availability": "public",
+            "title": "Tutorial Session - Week 1",
+            "transcript_vtt_url": "",
+            "yt_vid": "BkesMPmhh_E"
+          }
+        ]
+      },
+      {
+        "title": "Week 2",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "2.1 Issues with PCA",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec2.1.vtt",
+            "yt_vid": "sgU4zbO-W4M"
+          },
+          {
+            "availability": "public",
+            "title": "2.2 Time-complexity issue with PCA",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec2.2.vtt",
+            "yt_vid": "pwpDf2_Pytk"
+          },
+          {
+            "availability": "public",
+            "title": "2.3 Feature Transformation",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec2.3.vtt",
+            "yt_vid": "zcxnCyVSh70"
+          },
+          {
+            "availability": "public",
+            "title": "2.4 Kernel Functions",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec2.4.vtt",
+            "yt_vid": "G6rMGLhw3IQ"
+          },
+          {
+            "availability": "public",
+            "title": "2.5 Kernel PCA",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec2.5.vtt",
+            "yt_vid": "K46tdjqxM0w"
+          },
+          {
+            "availability": "public",
+            "title": "Tutorial Session - Week 2",
+            "transcript_vtt_url": "",
+            "yt_vid": "Qs8dVQzu43I"
+          }
+        ]
+      },
+      {
+        "title": "Week 3",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "3.1 Introduction to Clustering",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.1.vtt",
+            "yt_vid": "A3UNtCuMm7Y"
+          },
+          {
+            "availability": "public",
+            "title": "3.2 K-means Clustering (Lloyd's algorithm)",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.2.vtt",
+            "yt_vid": "QrXQ5cMzphA"
+          },
+          {
+            "availability": "public",
+            "title": "3.3 Convergence of K-means algorithm",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.3.vtt",
+            "yt_vid": "5geXmawaImk"
+          },
+          {
+            "availability": "public",
+            "title": "3.4 Nature of clusters produced by K-means",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.4.vtt",
+            "yt_vid": "EY03QHaaSBY"
+          },
+          {
+            "availability": "public",
+            "title": "3.5 Initialization of centroids, K-means++",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.5.vtt",
+            "yt_vid": "Cbrdtxq6bdk"
+          },
+          {
+            "availability": "public",
+            "title": "3.6 Choice of K",
+            "transcript_vtt_url": "https://seek-ode-prod.el.r.appspot.com/23t1_cs2007/assets/img/Lec3.6.vtt",
+            "yt_vid": "4-ycWgdMXD4"
+          },
+          {
+            "availability": "public",
+            "title": "Tutorial Session - Week 3",
+            "transcript_vtt_url": "",
+            "yt_vid": "_4mnXtczNoc"
+          }
+        ]
+      }
+    ]
+  }

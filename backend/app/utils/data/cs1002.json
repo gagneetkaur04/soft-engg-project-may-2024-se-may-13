@@ -1,0 +1,321 @@
+{
+    "course_id": "CS1002",
+    "forum_url": "https://discourse.onlinedegree.iitm.ac.in/c/courses/python-kb",
+    "title": "Python",
+    "week_wise": [
+      {
+        "title": "Week 1",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L1.1: Introduction",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec1W1.vtt",
+            "yt_vid": "8ndsDXohLMQ"
+          },
+          {
+            "availability": "public",
+            "title": "L1.2: Introduction to Replit",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec2W1.vtt",
+            "yt_vid": "NgZZ0HIUqbs"
+          },
+          {
+            "availability": "public",
+            "title": "L1.3: More on Replit, print and Common Mistakes",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3W1.vtt",
+            "yt_vid": "As7_aq6XGfI"
+          },
+          {
+            "availability": "public",
+            "title": "L1.4: A Quick Introduction to Variables",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4W1.vtt",
+            "yt_vid": "Yg6xzi2ie5s"
+          },
+          {
+            "availability": "public",
+            "title": "L1.5: Variables and Input Statement",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec5.vtt",
+            "yt_vid": "ruQb8jzkGyQ"
+          },
+          {
+            "availability": "public",
+            "title": "L1.6: Variables and Literals",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec6W1.vtt",
+            "yt_vid": "tDaXdoKfX0k"
+          },
+          {
+            "availability": "public",
+            "title": "L1.7: Data Types 1",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec7W1.vtt",
+            "yt_vid": "8n4MBjuDBu4"
+          },
+          {
+            "availability": "public",
+            "title": "L1.8: Data Types 2",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec8W1.vtt",
+            "yt_vid": "xQXxufhEJHw"
+          },
+          {
+            "availability": "public",
+            "title": "L1.9: Operators and Expressions 1",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec9W1.vtt",
+            "yt_vid": "8pu73HKzNOE"
+          },
+          {
+            "availability": "public",
+            "title": "L1.10: Operators and Expressions 2",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec10W1.vtt",
+            "yt_vid": "Y53K9FFu97Q"
+          },
+          {
+            "availability": "public",
+            "title": "L1.11: Introduction to Strings",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec11W1.vtt",
+            "yt_vid": "sS89tiDuqoM"
+          },
+          {
+            "availability": "public",
+            "title": "L1.12: More on Strings",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec12W1.vtt",
+            "yt_vid": "e45MVXwya7A"
+          },
+          {
+            "availability": "public",
+            "title": "L1.13: Conclusion: FAQs",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec13W1.vtt",
+            "yt_vid": "_Ccezy5hlc8"
+          }
+        ]
+      },
+      {
+        "title": "Week 2",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L2.1: Introduction",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec1.vtt",
+            "yt_vid": "aEPFZSzZ6VQ"
+          },
+          {
+            "availability": "public",
+            "title": "L2.2: Variables : A Programmer's Perspective",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec2.vtt",
+            "yt_vid": "XZSnqseRbZY"
+          },
+          {
+            "availability": "public",
+            "title": "L2.3: Variables Revisited: Dynamic Typing",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.vtt",
+            "yt_vid": "2OFZY77eOjw"
+          },
+          {
+            "availability": "public",
+            "title": "L2.4: More on Variables, Operators and Expressions",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.vtt",
+            "yt_vid": "-f833WH_cVo"
+          },
+          {
+            "availability": "public",
+            "title": "L2.5: Escape characters and types of quotes",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec5.vtt",
+            "yt_vid": "4vWM2oTGEio"
+          },
+          {
+            "availability": "public",
+            "title": "L2.6: String Methods",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec6.vtt",
+            "yt_vid": "bRAo6TJJjCU"
+          },
+          {
+            "availability": "public",
+            "title": "L2.7: An Interesting Cipher: More on Strings",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec7.vtt",
+            "yt_vid": "oxFYdHVNpg8"
+          },
+          {
+            "availability": "public",
+            "title": "L2.8: Introduction to the if statement",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec8.vtt",
+            "yt_vid": "FTX5wF_3J9Q"
+          },
+          {
+            "availability": "public",
+            "title": "L2.9: Tutorial on if, else and else-if (elif) conditions",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec9.vtt",
+            "yt_vid": "-dBqiRCHbNw"
+          },
+          {
+            "availability": "public",
+            "title": "L2.10: Introduction to \"import library\"",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec10.vtt",
+            "yt_vid": "OdjXL5U95eI"
+          },
+          {
+            "availability": "public",
+            "title": "L2.11: Different ways to import a library",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec11.vtt",
+            "yt_vid": "eW58_ky7oc8"
+          },
+          {
+            "availability": "public",
+            "title": "L2.12: Conclusion",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec12.vtt",
+            "yt_vid": "DK16M8EvOLE"
+          }
+        ]
+      },
+      {
+        "title": "Week 3",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L3.1: Introduction",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.1.vtt",
+            "yt_vid": "xiEzc_m2izc"
+          },
+          {
+            "availability": "public",
+            "title": "L3.2: Introduction to while loop",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.2.vtt",
+            "yt_vid": "KTvVNN7ia8o"
+          },
+          {
+            "availability": "public",
+            "title": "L3.3: While to Compute Factorial",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.3.vtt",
+            "yt_vid": "-ZMw8D-Xapk"
+          },
+          {
+            "availability": "public",
+            "title": "L3.4: Tutorial on while loop",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.4.vtt",
+            "yt_vid": "SqMeT9caxpE"
+          },
+          {
+            "availability": "public",
+            "title": "L3.5: Introduction to for loop",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.5.vtt",
+            "yt_vid": "lvXuQ_x7EsI"
+          },
+          {
+            "availability": "public",
+            "title": "L3.6: for loop to add the first n numbers",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.6.vtt",
+            "yt_vid": "lrbqrxIZcaQ"
+          },
+          {
+            "availability": "public",
+            "title": "L3.7: for loop for multiplication tables",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.7.vtt",
+            "yt_vid": "SMASd0rbt0g"
+          },
+          {
+            "availability": "public",
+            "title": "L3.8: More on range and for loop without range",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.8.vtt",
+            "yt_vid": "ihL3Eac9tFc"
+          },
+          {
+            "availability": "public",
+            "title": "L3.9: Formatted Printing",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.9.vtt",
+            "yt_vid": "DR0BhSzGnPo"
+          },
+          {
+            "availability": "public",
+            "title": "L3.10: Tutorial on for loop and difference between while loop and for loop",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.10.vtt",
+            "yt_vid": "7D2SFKSiiLg"
+          },
+          {
+            "availability": "public",
+            "title": "L3.11: Nested for loop",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.11.vtt",
+            "yt_vid": "-4MRaWABCuo"
+          },
+          {
+            "availability": "public",
+            "title": "L3.12: Tutorial on nested loops",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.12.vtt",
+            "yt_vid": "590mjTALkj0"
+          },
+          {
+            "availability": "public",
+            "title": "L3.13: break, continue and pass",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.13.vtt",
+            "yt_vid": "SVAVQHfJbE0"
+          },
+          {
+            "availability": "public",
+            "title": "L3.14: Conclusion",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec3.14.vtt",
+            "yt_vid": "DhjvmkGgw8U"
+          }
+        ]
+      },
+      {
+        "title": "Week 4",
+        "videos": [
+          {
+            "availability": "public",
+            "title": "L4.1: Introduction",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.1.vtt",
+            "yt_vid": "02BCThws054"
+          },
+          {
+            "availability": "public",
+            "title": "L4.2: Warmup with Lists",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.2.vtt",
+            "yt_vid": "toMhJJHSIYk"
+          },
+          {
+            "availability": "public",
+            "title": "L4.3: Birthday Paradox",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.3.vtt",
+            "yt_vid": "wpM41ZYLt0k"
+          },
+          {
+            "availability": "public",
+            "title": "L4.4: Naive Search in a List",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.4.vtt",
+            "yt_vid": "3huwiAPi-_I"
+          },
+          {
+            "availability": "public",
+            "title": "L4.5: The Obvious Sort",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.5.vtt",
+            "yt_vid": "hkDAafi09yo"
+          },
+          {
+            "availability": "public",
+            "title": "L4.6: Dot Product",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.6.vtt",
+            "yt_vid": "qSOoiWNplGo"
+          },
+          {
+            "availability": "public",
+            "title": "L4.7: Matrix Addition",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.7.vtt",
+            "yt_vid": "CRhUooqcvcU"
+          },
+          {
+            "availability": "public",
+            "title": "L4.8: Matrix Multiplication - 1",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.8.vtt",
+            "yt_vid": "seYP1F6Ct2g"
+          },
+          {
+            "availability": "public",
+            "title": "L4.9: Matrix Multiplication - 2",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.9.vtt",
+            "yt_vid": "mtRRS_ssl3s"
+          },
+          {
+            "availability": "public",
+            "title": "L4.10: Conclusion",
+            "transcript_vtt_url": "https://backend.seek.onlinedegree.iitm.ac.in/21t2_cs1002/assets/img/Lec4.10.vtt",
+            "yt_vid": "Z-1CxNrmRR4"
+          }
+        ]
+      }
+    ]
+  }
