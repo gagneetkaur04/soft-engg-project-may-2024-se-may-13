@@ -3,7 +3,7 @@
     <div class="nav-item text-nowrap card-header d-flex justify-content-center" @click="toggleFlag">
       <div>
         <a class="text-center text-decoration-none dropdown-toggle" aria-expanded="false">
-          <strong>week - {{ weekNumber }}</strong>
+          <strong>Week - {{ weekNumber }}</strong>
         </a>
       </div>
     </div>

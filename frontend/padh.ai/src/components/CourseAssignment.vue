@@ -4,7 +4,7 @@
         <div class="row">
             <SideNavBar :coursePage=true ref="sideNav"></SideNavBar>
             <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4 d-flex">
-                <h1 class="mx-auto"> Assigment - {{ weekNumber }}</h1>
+                <h1 class="mx-auto"> Assignment - {{ weekNumber }}</h1>
             </div>
             <div v-if="submittedFlag">
                 <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
@@ -22,7 +22,7 @@
                         </label>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-4" type="submit" v-bind:disabled="submittedFlag">Submit
+                <button class="btn btn-submit mt-4" type="submit" v-bind:disabled="submittedFlag">Submit
                     Assignment</button>
             </form>
         </div>
